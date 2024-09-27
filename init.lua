@@ -6,7 +6,7 @@ local listeners = require("modules/controllers/Listeners")
 
 LiNC = {
     description = "Live in Night City (a.k.a. survival mode)",
-    version = "0.3",
+    version = "0.3.5",
     strings = {},
     config = {}
 }
@@ -15,8 +15,7 @@ Notif = require("modules/views/Notification")
 User = user:new()
 Player = player:new()
 
-function LiNC:new()
-    registerForEvent("onInit", function()
+registerForEvent("onInit", function()
         User:load()
 
         observers.init()
@@ -39,6 +38,4 @@ function LiNC:new()
     registerHotkey("LiveInNightCity", "Show Needs", function()
         Notif.show()
     end)
-end
 
-return LiNC:new()
